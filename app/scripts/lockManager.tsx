@@ -17,11 +17,6 @@ async function SaveLock(lock: TypeLock) {
 
 async function getLock(id: number) {
   try {
-    await SaveLock({
-      id: 0,
-      unlockAt: Date.now() / 1000 + 5 * 60,
-      timeTotal: 10 * 60,
-    });
     const jsonValue = await AsyncStorage.getItem(id.toString());
     return jsonValue != null ? JSON.parse(jsonValue) : null;
   } catch (e) {

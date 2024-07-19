@@ -33,3 +33,12 @@ export function intToHuman(s: number) {
 
   return result;
 }
+
+export function humanToInt(d: number, h: number, m: number, s: number) {
+  const SECOND = 1,
+    MINUTE = 60 * SECOND,
+    HOUR = 60 * MINUTE,
+    DAY = 24 * HOUR;
+
+  return d * DAY + h * HOUR + m * MINUTE + s * SECOND;
+}
