@@ -21,19 +21,19 @@ export default function TabLayout() {
           title: "Home",
           tabBarIcon: ({ color, focused }) => (
             <TabBarIcon
-              name={focused ? "lock-closed" : "lock-closed-outline"}
+              name={focused ? "home" : "home-outline"}
               color={color}
             />
           ),
         }}
       />
       <Tabs.Screen
-        name="home"
+        name="social"
         options={{
-          title: "Index2",
+          title: "Social",
           tabBarIcon: ({ color, focused }) => (
             <TabBarIcon
-              name={focused ? "code-slash" : "code-slash-outline"}
+              name={focused ? "people" : "people-outline"}
               color={color}
             />
           ),

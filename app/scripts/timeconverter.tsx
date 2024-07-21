@@ -31,6 +31,12 @@ export function intToHuman(s: number) {
   if (minutes > 0) result += minutes + "m ";
   if (seconds > 0) result += seconds + "s ";
 
+  result = `${days > 10 ? "" : "0"}${days > 0 ? days : "0"}:${
+    hours > 10 ? "" : "0"
+  }${hours > 0 ? hours : "0"}:${minutes > 10 ? "" : "0"}${
+    minutes > 0 ? minutes : "0"
+  }:${seconds > 10 ? "" : "0"}${seconds > 0 ? seconds : "0"}`;
+
   return result;
 }
 

@@ -8,6 +8,7 @@ import { SaveLock } from "@/app/scripts/lockManager";
 interface Props {
   visible: boolean;
   toggle: Function;
+  update: Function;
 }
 
 export default function LockCreateModal(props: Props) {
@@ -65,20 +66,15 @@ export default function LockCreateModal(props: Props) {
           console.log(`D: ${days}|H: ${hours}|M: ${minutes}|S: ${seconds}`);
           console.log(`R: ${humanToInt(days, hours, minutes, seconds)}`);
 
-          /* 
-          interface TypeLock {
-            id: number;
-            unlockAt: number;
-            timeTotal: number;
-          }
-          */
-
           SaveLock({
             id: 0,
             unlockAt:
               Date.now() / 1000 + humanToInt(days, hours, minutes, seconds),
             timeTotal: 0,
           });
+
+          props.toggle(false);
+          props.update();
         }}
       >
         <View
